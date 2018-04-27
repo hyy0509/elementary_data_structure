@@ -1,0 +1,46 @@
+利用pointer和object表示dynamic set.
+
+一、stacks和queues:
+stacks和queues是预先规定删除操作(DELETE OPERATION)规则的dynamic set.
+stacks: LIFO(last-in, first-out)
+queues: FIFO(first-in, first-out)
+
+有很多有效方式实现stacks和queues, 这里讨论如何利用数组array(S)实现stacks和queues.
+
+
+STACKS:
+INSERT OPERATION → push
+DELETE OPERATION → pop
+
+S[1..n]: 一个至多含有n个元素的stack
+S[1]: the bottom element of stack S
+S[S.top]: the most recently inserted element
+S.top=0: empty stack
+
+underflows: 执行pop操作，若S.top=0
+overflows: S.top > n
+
+stack operations: stack-empty(S), push(S, x), pop(S)
+
+
+QUEUES:
+INSERT OPERATION: ENQUEUE
+DELETE OPERATION: DEQUEUE
+
+Q[1..n]: 一个至多含有n-1个元素的queue
+Q.head: 队头
+Q.tail: 队尾
+Q.head = Q.tail: "wrap around" property
+Q.head = Q.tail = 1: empty queue
+Q.head = Q.tail + 1: full queue
+
+类似stacks有underflows和overflows
+
+
+queue operations: ENQUEUE(Q, x), DEQUEUE(Q)
+
+问题 1: 用两个stacks实现一个queue
+问题 2: 用两个queue实现一个stacks
+
+
+
