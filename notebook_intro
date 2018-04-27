@@ -1,0 +1,46 @@
+dynamic set: 在算法的作用下，集合可以变大、变小、也可以随着时间改变，这样的集合叫做dynamic set。
+
+主要问题:
+No.1: 怎样表示dynamic set;
+No.2: 计算机中怎样操作他们.
+
+
+操作类型(*):
+No.1: 插入元素;
+No.2: 删除元素;
+NO.3: 验证集合中元素的关系.
+
+
+dictionary: 支持操作类型(*)的dynamic set.
+
+
+一般的dynamic_set:={object|object.attributes, 对象的属性可以通过指针检测和操作}
+若{object.attribute1|object属于dynamic_set}中的元素互不相同，这时dynamic_set可以看做key_value的集合，其中key=object.attribute1.
+
+
+satellite data:
+
+
+dynamic set上的操作operations有两类:queries和modifying operations。
+一、queries: 返回dynamic set的信息。
+SEARCH(S,k): 给定集合S，key值k. 若存在指针x, s.t. x→object，并且object.key=k, 则返回指针x; 否则，返回NIL(没有满足条件的元素).
+MINIMUM(S): 给定集合S，返回指针x, 使得x→object，object.key = min{object.key|object属于S}.
+MAXIMUM(S): 给定集合S，返回指针x, 使得x→object，object.key = max{object.key|object属于S}.
+SUCCESSOR(S,x): 返回key值与x的key值相邻并且比x的key值大的指针.
+PREDECESSOR(S,x): 返回key值与x的key值相邻并且比x的key值小的指针.
+二、modifying operations: 改变集合。
+INSEART(S,x): 集合S中增加指针x指向的object, 这时假设object.attributes已经被初始化了.
+DELETE(S,x): 移除指针x.
+
+Remake: 指针x与S中的object一一对应，因此object.key也可记为x.key.
+
+
+
+
+
+
+
+
+
+
+
